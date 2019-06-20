@@ -25,7 +25,7 @@
         <!-- This row contains the timer -->
         <div class="row">
             <div class="col-auto m-auto">
-                <h4>Time Remaining: <span id="countdown">30</span> Seconds</h4>
+                <h4 id="time-line"><span id="countdown"></span></h4>
             </div>
         </div>
 
@@ -33,7 +33,25 @@
         <div class="row">
             <div class="col-auto m-auto">
                 <div id="question-area">
-                    
+                    <button id="start" type="button" class="btn btn-danger">
+                        START
+
+                        
+                    </button>
+                    <form align="center">
+                        
+                        <p>On what system did Halo release?</p>
+
+                        <input id="questionOne" type='radio' name="question-one" value='xbox'> Xbox 
+                        <input id="questionOne" type='radio' name="question-one" value='playstation'> PlayStation 2 
+                        <input id="questionOne" type='radio' name="question-one" value='nintendo'> GameCube 
+                        <input id="questionOne" type='radio' name="question-one" value='pc'> PC 
+
+
+
+                        <br><br><br>
+                        <input type="submit" value="Submit">
+                    </form>
                 </div>
             </div>
         </div>
