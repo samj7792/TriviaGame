@@ -1,4 +1,35 @@
+body {
+    background-image: url(../images/background.jpg)
+}
+
+.container {
+    background-color: rgb(189, 189, 7);
+    border: 2px solid rgb(0, 0, 255);
+}
+
+
 #start {
     height: 300px;
     width: 500px;
+    font-size: 350%;
+}
+
+#title {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 150%;
+    
+}
+
+input {
+    
+    margin: 0 auto;
+}
+
+#time-line {
+    margin-bottom: 20px;
 }

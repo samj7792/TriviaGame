@@ -1,5 +1,5 @@
 // This will be the time remaining
-var time = 30;
+var time = 120;
 
 var intervalId;
 
@@ -16,11 +16,12 @@ function startTimer() {
     $("#countdown").html("Time Remaining: " + time + " Seconds");
 
     intervalId = setInterval(decrement, 1000);
+
+    
 }
 
 
 function startQuiz () {
-
 
     startTimer();
 
@@ -49,6 +50,10 @@ function decrement() {
     }
 }
 
+
+
+
+
 // function to stop the timer
 function stop() {
     clearInterval(intervalId);
@@ -58,7 +63,7 @@ function stop() {
 // this object contains the questions and answer choices
 var questions = {
 
-    questionOne : "<br>On what system did Halo: Combat Evolved release? <br>",
+    questionOne : "<br><p>On what system did Halo: Combat Evolved release?</p>",
     answersOne : [
         "<input type='radio' name='question-one' value='xbox'> Xbox ",
         "<input type='radio' name='question-one' value='playstation'> PlayStation 2 ",
@@ -66,7 +71,7 @@ var questions = {
         "<input type='radio' name='question-one' value='pc'> PC <br><br>"
     ],
 
-    questionTwo : "Which game has sold the most units of all time? <br>",
+    questionTwo : "<p>Which game has sold the most units of all time?</p>",
     answersTwo : [
         "<input type='radio' name='question-two' value='pokemon'> Pokemon Red ",
         "<input type='radio' name='question-two' value='minecraft'> Minecraft ",
@@ -74,7 +79,7 @@ var questions = {
         "<input type='radio' name='question-two' value='mario'> Super Mario 64 <br><br>"
     ],
 
-    questionThree : "The character 'Master Hand' appeared as an enemy in which game? <br>",
+    questionThree : "<p>The character 'Master Hand' appeared as an enemy in which game?</p>",
     answersThree : [
         "<input type='radio' name='question-three' value='halo'> Halo: 2 ",
         "<input type='radio' name='question-three' value='candy'> Candy Crush ",
@@ -82,7 +87,7 @@ var questions = {
         "<input type='radio' name='question-three' value='smash'> Super Smash Bros <br><br>"
     ],
 
-    questionFour : "Which pokemon is listed first in the Pokedex? <br>",
+    questionFour : "<p>Which pokemon is listed first in the Pokedex?</p>",
     answersFour : [
         "<input type='radio' name='question-four' value='pikachu'> Pikachu ",
         "<input type='radio' name='question-four' value='mew'> Mew ",
@@ -90,7 +95,7 @@ var questions = {
         "<input type='radio' name='question-four' value='charizard'> Charizard <br><br>"
     ],
 
-    questionFive : "What is the name of Link's sword in The Legend of Zelda? <br>",
+    questionFive : "<p>What is the name of Link's sword in The Legend of Zelda?<p>",
     answersFive : [
         "<input type='radio' name='question-five' value='mega'> Mega Sword ",
         "<input type='radio' name='question-five' value='master'> Master Sword ",
@@ -98,7 +103,7 @@ var questions = {
         "<input type='radio' name='question-five' value='special'> Special Sword <br><br>"
     ],
 
-    questionSix : "In what city does Fallout 3 take place? <br>",
+    questionSix : "<p>In what city does Fallout 3 take place?</p>",
     answersSix : [
         "<input type='radio' name='question-six' value='boson'> Boston ",
         "<input type='radio' name='question-six' value='seattle'> Seattle ",
@@ -106,7 +111,7 @@ var questions = {
         "<input type='radio' name='question-six' value='austin'> Austin <br><br>"
     ],
 
-    questionSeven : "What does Sonic collect throughout the levels in his games? <br>",
+    questionSeven : "<p>What does Sonic collect throughout the levels in his games?</p>",
     answersSeven : [
         "<input type='radio' name='question-seven' value='rings'> Rings ",
         "<input type='radio' name='question-seven' value='coins'> Coins ",
@@ -114,7 +119,7 @@ var questions = {
         "<input type='radio' name='question-seven' value='cakes'> Cakes <br><br>"
     ],
 
-    questionEight : "In the 'Witcher' series, what sword does Geralt use to kill monsters? <br>",
+    questionEight : "<p>In the 'Witcher' series, what sword does Geralt use to kill monsters?</p>",
     answersEight : [
         "<input type='radio' name='question-eight' value='gold'> Gold Sword ",
         "<input type='radio' name='question-eight' value='obsidian'> Obsidian Sword ",
@@ -122,7 +127,7 @@ var questions = {
         "<input type='radio' name='question-eight' value='silver'> Silver Sword <br><br>"
     ],
 
-    questionNine : "What game features the characters 'Tracer,' 'Reaper,' and 'McCree'? <br>",
+    questionNine : "<p>What game features the characters 'Tracer,' 'Reaper,' and 'McCree'?</p>",
     answersNine : [
         "<input type='radio' name='question-nine' value='overwatch'> Overwatch ",
         "<input type='radio' name='question-nine' value='cod'> Call of Duty ",
@@ -130,7 +135,7 @@ var questions = {
         "<input type='radio' name='question-nine' value='kombat'> Mortal Kombat <br><br>"
     ],
 
-    questionTen : "Which Call of Duty game featured the 'Tactical Nuke' kill-streak? <br>",
+    questionTen : "<p>Which Call of Duty game featured the 'Tactical Nuke' kill-streak?</p>",
     answersTen : [
         "<input type='radio' name='question-ten' value='cod5'> World at War ",
         "<input type='radio' name='question-ten' value='mw2'> Modern Warfare 2 ",
@@ -139,10 +144,13 @@ var questions = {
     ],
 }
 
+// submitButton to end the quiz
+// I'm not sure where to place this or the onclick event related to it 
+var submitButton = $("<button>").html("Submit");
+submitButton.attr("id", "submitQuiz");
+submitButton.attr("class", "btn btn-primary mb-4");
 
-// var questionOne = $("<p></p>").text("On what system did Halo release?");
-
-// var choicesOne = "<form align='center'><p id='question-one'>On what system did Halo release?</p><input type='radio' name='question-one' value='xbox'> Xbox <input type='radio' name='question-one' value='playstation'> PlayStation 2 <input type='radio' name='question-one' value='nintendo'> GameCube <input type='radio' name='question-one' value='pc'> PC <br><br><br><input type='submit' value='Submit'></form>";
+// $("#submitQuiz").on("click", stop(), checkAnswers());
 
 
 
@@ -177,6 +185,12 @@ function showQuestions() {
 
     $("#question-area").append(questions.questionTen);
     $("#question-area").append(questions.answersTen);
+
+
+
+    // show the submit button on the page
+    // $("#question-area").append(submitButton);
+
 }
 
 function checkAnswers() {
@@ -254,6 +268,6 @@ function checkAnswers() {
     }
 
     // replace the question-area with:
-    $("#question-area").html("All Done<br>");
-    $("#question-area").append(score);
+    $("#question-area").html("<p>Well Done!</p>");
+    $("#question-area").append("<p>You got " + score + " out of 10 correct!");
 }
